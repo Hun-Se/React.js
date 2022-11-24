@@ -2,9 +2,7 @@
 
 ## 년도별 구입목록 만들기
 
-<p align="center">
-<img src = "![ezgif com-gif-maker](https://user-images.githubusercontent.com/70246174/203681607-ede990bd-7ca3-4243-b33e-92716bd376dd.gif)">
-</p>
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/70246174/203682308-dc5f83c9-b8a2-4cfa-b3f9-f95a8b0f8af2.gif)
 
 ## 배운점
 
