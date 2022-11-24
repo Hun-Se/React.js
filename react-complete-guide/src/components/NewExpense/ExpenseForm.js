@@ -5,7 +5,6 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  const [visibleState, setvisibleState] = useState(false);
 
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: "",
@@ -42,7 +41,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -50,10 +49,6 @@ const ExpenseForm = (props) => {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
-  };
-
-  const buttonClickEvent = () => {
-    setvisibleState(!visibleState);
   };
 
   return (
