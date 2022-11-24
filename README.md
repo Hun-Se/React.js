@@ -1,5 +1,13 @@
 # React.js
 
+## 년도별 구입목록 만들기
+
+<p align="center">
+<img src = "![ezgif com-gif-maker](https://user-images.githubusercontent.com/70246174/203681607-ede990bd-7ca3-4243-b33e-92716bd376dd.gif)">
+</p>
+
+## 배운점
+
 - React를 사용할 때에는 화면에 무엇이 표시되어야 하는지를 정의하고 React가 거기까지 도달하는 방법을 알아내도록 선언형 JavaScript 코드로 만들어야 한다.
 
 선언형
