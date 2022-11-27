@@ -1,6 +1,11 @@
 .container_modal {
+  /* display: none; */
   width: 80%;
   margin: 0 auto;
+}
+
+.container_modal .visible {
+  display: block;
 }
 
 .box_modal {
