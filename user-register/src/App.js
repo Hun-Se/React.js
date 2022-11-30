@@ -1,11 +1,11 @@
 import React from "react";
-import UserForm from "./components/UserForm";
+import AddUser from "./components/User/AddUser";
 import "./style/reset.css";
 
 const App = () => {
   return (
     <div>
-      <UserForm />
+      <AddUser />
     </div>
   );
 };

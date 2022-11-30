@@ -3,7 +3,7 @@ import Card from "./UI/Card";
 import InvalidModal from "./InvalidModal";
 import styles from "./UserForm.module.css";
 
-const UserForm = () => {
+const AddUser = () => {
   const [isValid, setIsValid] = useState("");
   const [visible, setVisible] = useState(false);
   const [mesage, setMesage] = useState("");
@@ -12,7 +12,7 @@ const UserForm = () => {
     setIsValid(event.target.value);
   };
 
-  const addSubmitevent = (event) => {
+  const addUserHandler = (event) => {
     event.preventDefault();
     console.log(isValid);
     if (isValid === "") {
@@ -27,8 +27,8 @@ const UserForm = () => {
 
   return (
     <div>
-      <form onSubmit={addSubmitevent}>
-        <Card className={styles.user_form}>
+      <Card className={styles.user_form}>
+        <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
           <input type="text" name="username" onChange={checkInputHandler} />
           <label htmlFor="age">Age(Years)</label>
@@ -36,11 +36,11 @@ const UserForm = () => {
           <button type="submit" className={styles.btn_add_user}>
             Add User
           </button>
-        </Card>
-      </form>
+        </form>
+      </Card>
       {visible ? <InvalidModal mesage={mesage} /> : null}
     </div>
   );
 };
 
-export default UserForm;
+export default AddUser;
