@@ -1,0 +1,39 @@
+.user_form {
+  display: block;
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.user_form label {
+  display: block;
+  font-size: 18px;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.user_form input {
+  display: block;
+  margin-bottom: 1rem;
+  font: inherit;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.user_form .btn_add_user {
+  width: 120px;
+  line-height: 30px;
+  background-color: purple;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.user_form .btn_add_user:hover,
+.user_form .btn_add_user:active {
+  background-color: blueviolet;
+}
