@@ -26,7 +26,7 @@ const UserForm = () => {
   };
 
   return (
-    <div>
+    <>
       <form onSubmit={addSubmitevent}>
         <Card className={styles.user_form}>
           <label htmlFor="username">Username</label>
@@ -39,7 +39,7 @@ const UserForm = () => {
         </Card>
       </form>
       {visible ? <InvalidModal mesage={mesage} /> : null}
-    </div>
+    </>
   );
 };
 
