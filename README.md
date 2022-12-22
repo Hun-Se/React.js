@@ -4,6 +4,39 @@
 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/70246174/203682308-dc5f83c9-b8a2-4cfa-b3f9-f95a8b0f8af2.gif)
 
+## 쇼핑몰 프로토타입
+
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/70246174/209078055-b1cd1f6b-c687-41d1-8eeb-fb91be9c4194.gif)
+
+- UseRef를 사용하여 Input 속성 사용
+
+```JavaScript
+const Input = React.forwardRef((props, ref) => {
+  return (
+    <div className={classes.input}>
+      <label htmlFor={props.input.id}>{props.label}</label>
+      <input ref={ref} {...props.input} />
+    </div>
+  );
+});
+```
+
+- UseReducer와 UseContext를 사용하여 장바구니 item state 관리
+
+- UseEffect를 사용하여 애니메이션 기능 추가
+
+```JavaScript
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    }
+    setBtnIsHighLighted(true);
+
+    const timer = setTimeout(() => {
+      setBtnIsHighLighted(false);
+    }, 300)});
+```
+
 ## 배운점
 
 - React를 사용할 때에는 화면에 무엇이 표시되어야 하는지를 정의하고 React가 거기까지 도달하는 방법을 알아내도록 선언형 JavaScript 코드로 만들어야 한다.
@@ -95,3 +128,15 @@ useEffect(() => {
 - const input = React.forwardRef(() => {}): React.forwardRef로 컴포넌트를 감싸주면 ref를 전달 할 수 있다. 이때 useImpreativeHandle를 사용하여 메서드를 정의하여 사용 할 수 있다.
 - 단, ref를 사용하는 것은 리엑트에서 권장하지 않는다.
 - focus나 스크롤링을 구현 할때는 유용하다.
+
+### 장바구니 및 구매페이지 만들기
+
+### 배운점
+
+- bind() 함수는 새롭게 바인딩한 함수를 만드는 함수로, 바인딩한 함수는 원본 함수 객체를 감싸는 함수로써, 바인딩한 함수를 호출하면 일반적으로 래핑된 함수가 호출 된다. (ECMAScript 2015의 exotic function object)
+
+- 사용법
+  Function.bind(thisArg, [arg1, arg2, ...])
+  thisArg // this가 가리킬 객체를 지정
+  [arg1, arg2 ... ] // 함수의 인자로 전달할 값
+  이때 첫 번째 인자인 thisArg는 선택옵션으로 값을 전달하지 않아도 되며 null 등을 사용할 수 있다. 그 다음은 함수에 전달 할 인자 값으로 배열 타입으로 전달하게 된다. 이처럼 인자 값을 배열로 전달하는 것은 apply()와 비슷하다.
