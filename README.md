@@ -37,6 +37,12 @@ const Input = React.forwardRef((props, ref) => {
     }, 300)});
 ```
 
+### 2022/12/30 업데이트
+
+- FireBase와 연동하여 fetch를 통한 데이터 통신하여 주문할 수 있는 기능 추가
+- 주문목록 useReducer로 state관리
+- 주문 완료시 장바구니 초기화 기능 추가
+
 ## 배운점
 
 - React를 사용할 때에는 화면에 무엇이 표시되어야 하는지를 정의하고 React가 거기까지 도달하는 방법을 알아내도록 선언형 JavaScript 코드로 만들어야 한다.
