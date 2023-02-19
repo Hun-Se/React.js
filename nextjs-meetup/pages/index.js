@@ -46,10 +46,23 @@ const HomePage = () => {
   return <MeetupList meetups={loadedMeetups} />;
 };
 
-// 빌드 중 작용
+// 데이터를 요청할때마다 데이터를패치한다.
+// export async function getServerSideProps(context) {
+//   const req = context.req;
+//   const res = context.res;
+//   return {
+//     props: {
+//       meetups: DUMMY_MEETUPS,
+//     },
+//   };
+// }
+
+// 빌드 중 작용 데이터가 자주 바뀌지 않을때 유용하다.
+// getStaticPros는 revalidate에 설정한 시간이 지날때마다 페이지라를 만든다.
 export async function getStaticProps() {
   return {
-    props: {},
+    props: { meetup: DUMMY_MEETUPS },
+    revalidate: 10,
   };
 }
 
