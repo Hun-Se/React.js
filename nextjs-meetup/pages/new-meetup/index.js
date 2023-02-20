@@ -1,40 +1,37 @@
 // our-domain.com/new-meetup
+import { useRouter } from "next/router";
+import Head from "next/head";
 import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
 const NewMeetupPaged = () => {
-  const addMeetupHandler = (enteredMeetupData) => {
-    console.log(enteredMeetupData);
+  const router = useRouter();
+  const addMeetupHandler = async (enteredMeetupData) => {
+    const response = await fetch("/api/new-meetup", {
+      method: "POST",
+      body: JSON.stringify(enteredMeetupData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
+    router.push("/");
   };
-  return <NewMeetupForm onAddMeetup={addMeetupHandler} />;
+  return (
+    <>
+      <Head>
+        <title>Add a New Meetup</title>
+        <meta
+          name="description"
+          content="Add your own meetups and create amazing networking opportunities"
+        ></meta>
+      </Head>
+      <NewMeetupForm onAddMeetup={addMeetupHandler} />
+    </>
+  );
 };
-
-// 동적페이지를 위한
-export async function getStaticPath() {
-  return {
-    fallback: false,
-    path: [
-      {
-        params: {
-          meetupId: "m1",
-        },
-      },
-    ],
-  };
-}
-
-// 빌드사이드에서 돌아가는 함수이기 때문에 내부의 함수는 터미널을 통해 확인 할 수 있다.
-export async function getStaticProps(context) {
-  const meetupId = context.params.meetupId;
-
-  console.log(meetupId);
-
-  return {
-    props: {
-      meetupData: {
-        id: meetupId,
-      },
-    },
-  };
-}
 
 export default NewMeetupPaged;
